@@ -7,8 +7,10 @@
  */
 ?>
 
+    </main>
     <footer>Footer</footer>
-    <?php wp_footer(); ?>
-  </body>
+  </div>
+  <?php wp_footer(); ?>
+</body>
 
 </html>
