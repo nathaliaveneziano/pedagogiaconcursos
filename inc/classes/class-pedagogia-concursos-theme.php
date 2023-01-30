@@ -19,6 +19,7 @@ class PEDAGOGIA_CONCURSOS_THEME
     // load class.
 
     Assets::get_instance();
+    Menus::get_instance();
 
     $this->setup_hooks();
   }
@@ -31,6 +32,8 @@ class PEDAGOGIA_CONCURSOS_THEME
 
   public function setup_theme()
   {
+
+
     add_theme_support('title-tag');
 
     add_theme_support('custom-logo', [
@@ -40,5 +43,38 @@ class PEDAGOGIA_CONCURSOS_THEME
       'flex-height' => true,
       'flex-width' => true,
     ]);
+
+    add_theme_support('custom-background', [
+      'default-color' => '#F2F2F2',
+      'defaul-image' => '',
+      'defaul-repeat' => 'no-repeat',
+    ]);
+
+    add_theme_support('post-thumbnails');
+
+    add_theme_support('customize-selective-refresh-widgets');
+
+    add_theme_support('automatic-feed-links');
+
+    add_theme_support('html5', [
+      'search-form',
+      'comment-form',
+      'comment-list',
+      'gallery',
+      'caption',
+      'script',
+      'style',
+    ]);
+
+    add_editor_style();
+
+    add_theme_support('wp-block-styles');
+
+    add_theme_support('align-wide');
+
+    global $content_width;
+    if (!isset($content_width)) {
+      $content_width = 1240;
+    }
   }
 }
